@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Simpsons by the Data | Kaggle</title>
+    <meta charset="utf-8" />
+    <meta name="robots" content="index, follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">    <meta name="theme-color" content="#008ABC" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="dns-prefetch" href="https://stats.g.doubleclick.net" /><link rel="dns-prefetch" href="https://js.intercomcdn.com" /><link rel="preload" href="https://az416426.vo.msecnd.net/scripts/a/ai.0.js" as=script /><link rel="dns-prefetch" href="https://kaggle2.blob.core.windows.net" />
+    <link href="/content/v/d420a040e581/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="manifest" href="/static/json/manifest.json">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic" rel='stylesheet' type='text/css'>
+                <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=72f4ef2ebe4f"/>
+        <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=8a56a74411c3"/>
+        <script>
+            
+            (function () {
+                var originalError = window.onerror;
+
+                window.onerror = function (message, url, lineNumber, columnNumber, error) {
+                    var handled = originalError && originalError(message, url, lineNumber, columnNumber, error);
+                    var blockedByCors = message && message.toLowerCase().indexOf("script error") >= 0;
+                    return handled || blockedByCors;
+                };
+            })();
+        </script>
+    <script>
+        var appInsights=window.appInsights||function(config){
+        function i(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",y=u.createElement(o),r,f;y.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(y);try{t.cookie=u.cookie}catch(p){}for(t.queue=[],t.version="1.0",r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)i("track"+r.pop());return i("set"+s),i("clear"+s),i(h+a),i(c+a),i(h+v),i(c+v),i("flush"),config.disableExceptionTracking||(r="onerror",i("_"+r),f=e[r],e[r]=function(config,i,u,e,o){var s=f&&f(config,i,u,e,o);return s!==!0&&t["_"+r](config,i,u,e,o),s}),t
+        }({
+            instrumentationKey:"5b3d6014-f021-4304-8366-3cf961d5b90f",
+            disableAjaxTracking: true
+        });
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+    
+    
+    
+ 
+    
+    <script>
+    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    ga('create', 'UA-12629138-1', 'auto');
+    ga('set', 'displayFeaturesTask', null);
+    ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+    
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq("set", "autoConfig", "false", "136809193586742");
+    fbq('init', '136809193586742'); 
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=136809193586742&ev=PageView&noscript=1"/>
+</noscript>
+
+    
+
+    <script>
+          window.intercomSettings = {
+            app_id: "koj6gxx6"
+          };
+    </script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets"/>
+    <meta name="og:url" content="https://www.kaggle.com/wcukierski/the-simpsons-by-the-data" />
+    <meta name="og:title" content="The Simpsons by the Data" />
+    <meta name="og:description" content="27 seasons of &quot;Simpsons did it.&quot;" />
+    <meta name="og:image" content="https://kaggle2.blob.core.windows.net/datasets-images/203/430/24a4759050fd2eb14ffa47408ff922c9/dataset-card.jpg" />
+
+
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"The Simpsons by the Data","description":"This dataset contains the characters, locations, episode details, and script lines for approximately 600 Simpsons episodes, dating back to 1989.\n\nInspiration and credit for gathering the data goes to Todd Schneider:\n\nhttp://toddwschneider.com/posts/the-simpsons-by-the-data/  \nhttps://github.com/toddwschneider/flim-springfield","url":"https://www.kaggle.comwcukierski/the-simpsons-by-the-data","sameAs":"https://staging.kaggle.com/wcukierski/the-simpsons-by-the-data","version":1,"keywords":["culture and arts > culture and humanities > popular culture","medium","featured"],"license":{"@type":"CreativeWork","name":"Data files © Original Authors","url":null},"identifier":"203","includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"William Cukierski","url":"https://www.kaggle.com//wcukierski","image":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/3258-fb.jpg"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com//wcukierski/the-simpsons-by-the-data/downloads/the-simpsons-by-the-data.zip","contentSize":"9368262 bytes"},{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"csv","fileFormat":"csv","contentUrl":"https://www.kaggle.com//wcukierski/the-simpsons-by-the-data/downloads/simpsons_characters.csv","contentSize":"214869 bytes"},{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"csv","fileFormat":"csv","contentUrl":"https://www.kaggle.com//wcukierski/the-simpsons-by-the-data/downloads/simpsons_episodes.csv","contentSize":"119729 bytes"},{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"csv","fileFormat":"csv","contentUrl":"https://www.kaggle.com//wcukierski/the-simpsons-by-the-data/downloads/simpsons_locations.csv","contentSize":"178199 bytes"},{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"csv","fileFormat":"csv","contentUrl":"https://www.kaggle.com//wcukierski/the-simpsons-by-the-data/downloads/simpsons_script_lines.csv","contentSize":"9163442 bytes"}],"commentCount":12,"dateModified":"2016-09-28T19:22:21.763","discussionUrl":"https://www.kaggle.comwcukierski/the-simpsons-by-the-data/discussion","alternateName":"27 seasons of \"Simpsons did it.\"","isAccessibleForFree":true,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/datasets-images/203/430/24a4759050fd2eb14ffa47408ff922c9/dataset-card.jpg","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":12},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":3948},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":35675},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":85}]}</script>
+
+
+    <script src="/static/assets/manifest.js?v=47a28ec84654"></script>
+<script src="/static/assets/vendor.js?v=b350792dba9a"></script>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+<div class="site-layout">
+        <div class="site-layout__header">
+            <div data-component-name="SiteHeaderContainer"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({});performance && performance.mark && performance.mark("SiteHeaderContainer.componentCouldBootstrap");</script>
+        </div>
+
+    <div class="site-layout__main-content">
+        
+
+<div data-component-name="DatasetContainer"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"datasetId":203,"overview":"27 seasons of \u0022Simpsons did it.\u0022","description":"This dataset contains the characters, locations, episode details, and script lines for approximately 600 Simpsons episodes, dating back to 1989.\n\nInspiration and credit for gathering the data goes to Todd Schneider:\n\nhttp://toddwschneider.com/posts/the-simpsons-by-the-data/  \nhttps://github.com/toddwschneider/flim-springfield","isRemoved":false,"isVersionRemoved":false,"isFeatured":true,"isSuperFeatured":false,"scheduledToBeFeatured":null,"scheduledToBeUnFeatured":null,"scheduledToBeSuperFeatured":null,"scheduledToBeUnSuperFeatured":null,"privateGroupId":null,"datasetVersionId":430,"datasetVersionNumber":1,"lastVersionNumber":1,"datasetUrl":"/wcukierski/the-simpsons-by-the-data","datasetExternalUrl":"https://www.kaggle.com/wcukierski/the-simpsons-by-the-data","originalImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/203/430/24a4759050fd2eb14ffa47408ff922c9/dataset-original.jpg","coverImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/203/430/24a4759050fd2eb14ffa47408ff922c9/dataset-cover.jpg","cardImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/203/430/24a4759050fd2eb14ffa47408ff922c9/dataset-card.jpg","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/203/430/24a4759050fd2eb14ffa47408ff922c9/dataset-thumbnail.jpg","license":{"id":11,"name":"Data files © Original Authors","description":"Data files © Original Authors","url":null,"displaySequence":null},"voteCount":85,"upVoteUrl":"/wcukierski/the-simpsons-by-the-data/vote","creatorUserId":3258,"creatorDisplayName":"William Cukierski","ownerTwitter":null,"lastUpdated":"2016-09-28T19:22:21.763Z","downloadUrl":"/wcukierski/the-simpsons-by-the-data/downloads/the-simpsons-by-the-data.zip","downloadSize":9368262,"newNotebookUrl":"/Scripts/NewNotebook?datasetVersionId=430","newScriptUrl":"/Scripts/NewScriptAsync?datasetVersionId=430","hasAlreadyVotedUp":false,"isOldDatasetVersion":false,"numberOfViews":35675,"numberOfDownloads":3948,"numberOfScripts":70,"numberOfTopics":12,"privateGroupMemberCount":0,"canEdit":false,"canEditSlug":false,"canEditPublishStatus":false,"canEditFeatureStatus":false,"canEditPrivateGroup":false,"canEditDescription":false,"hideVersionStatuses":true,"cardImageLeft":560,"cardImageTop":453,"cardImageWidth":587,"cardImageHeight":587,"coverImageLeft":0,"coverImageTop":483,"coverImageWidth":1916,"coverImageHeight":403,"datasetVersions":[{"id":430,"slug":"the-simpsons-by-the-data","name":"The Simpsons by the Data","creationDate":"2016-09-28T19:22:21.763Z","versionNumber":1,"versionNotes":"Initial release","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/203/430/24a4759050fd2eb14ffa47408ff922c9/dataset-thumbnail.jpg","datasetVersionUrl":"/wcukierski/the-simpsons-by-the-data/version/1","status":"ready","isRemoved":false}],"scripts":[{"name":"Fun in Text Mining with Simpsons","url":"/ambarish/fun-in-text-mining-with-simpsons","lastRunDate":"2017-10-04T07:21:54.067Z","totalVotes":26},{"name":"The (Non) Simpsons","url":"/ewenhen/the-non-simpsons","lastRunDate":"2016-10-05T23:35:22.303Z","totalVotes":12},{"name":"Words by character","url":"/wcukierski/words-by-character","lastRunDate":"2016-09-28T19:39:02.767Z","totalVotes":8}],"discussions":[{"title":"The Simpsons by the numbers | Web App to Explore Seasons \u0026 Your Favorite Characters","url":"/forums/f/1600/the-simpsons-by-the-data/t/41540/the-simpsons-by-the-numbers-web-app-to-explore-seasons-your-favorite-characters","lastPost":"2017-11-05T23:12:39.553Z","totalReplies":1},{"title":"Times Homer Says Doh!","url":"/qazcat/times-homer-says-doh/comments","lastPost":"2017-09-04T17:44:52.003Z","totalReplies":2},{"title":"Refresh Data","url":"/forums/f/1600/the-simpsons-by-the-data/t/37289/refresh-data","lastPost":"2017-07-30T14:49:04.54Z","totalReplies":0}],"contributors":[{"userId":103225,"totalScriptVotes":26,"totalScripts":1,"totalForumMessages":1,"totalForumMessageVotes":0,"totalScore":28.0,"displayName":"Bukun","performanceTier":"Expert","userUrl":"/ambarish","rank":"1st","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/103225-kg.jpg"},{"userId":206546,"totalScriptVotes":10,"totalScripts":2,"totalForumMessages":1,"totalForumMessageVotes":1,"totalScore":14.0,"displayName":"Joshua Bensemann","performanceTier":"Contributor","userUrl":"/qazcat","rank":"2nd","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/206546-fb.jpg"},{"userId":429733,"totalScriptVotes":12,"totalScripts":1,"totalForumMessages":0,"totalForumMessageVotes":0,"totalScore":13.0,"displayName":"Ewen Henderson","performanceTier":"Contributor","userUrl":"/ewenhen","rank":"3rd","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/429733-kg.png"}],"pageMessages":[],"feed":[{"activityType":"scriptRun","url":"/karineh/simpsons-view-analysis","userName":"karineh","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","date":"2017-12-12T10:05:22.647Z","userDisplayName":"Karine Aleksanyan","title":"Simpsons view analysis","versionNumber":4,"userUrl":"/karineh"},{"activityType":"scriptRun","url":"/erichamers/the-simpsons-data-analysis-is-the-show-dying","userName":"erichamers","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1404804-gp.jpg","date":"2017-12-06T01:34:15.273Z","userDisplayName":"Eric Hamers","title":"The Simpsons Data Analysis - Is The Show Dying?","versionNumber":3,"userUrl":"/erichamers"},{"activityType":"comment","url":"/forums/f/1600/the-simpsons-by-the-data/t/41540/the-simpsons-by-the-numbers-web-app-to-explore-seasons-your-favorite-characters","userName":"ambarish","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/103225-kg.jpg","date":"2017-11-05T23:12:39.553Z","userDisplayName":"Bukun","title":"The Simpsons by the numbers | Web App to Explore Seasons \u0026 Your Favorite Characters","versionNumber":0,"userUrl":"/ambarish"},{"activityType":"topic","url":"/forums/f/1600/the-simpsons-by-the-data/t/41540/the-simpsons-by-the-numbers-web-app-to-explore-seasons-your-favorite-characters","userName":"jcadenas","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1192862-kg.jpg","date":"2017-10-19T21:03:32.983Z","userDisplayName":"Julian Cadenas","title":"The Simpsons by the numbers | Web App to Explore Seasons \u0026 Your Favorite Characters","versionNumber":0,"userUrl":"/jcadenas"},{"activityType":"scriptRun","url":"/ambarish/fun-in-text-mining-with-simpsons","userName":"ambarish","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/103225-kg.jpg","date":"2017-10-04T07:21:46.25Z","userDisplayName":"Bukun","title":"Fun in Text Mining with Simpsons","versionNumber":35,"userUrl":"/ambarish"}],"privateGroups":[{"id":0,"name":"Publicly Accessible"}],"suggestions":[{"entityType":"dataset","entityId":2946,"title":"YouTube Faces With Facial Keypoints","entityUrl":"/selfishgene/youtube-faces-with-facial-keypoints","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/2946/4951/ca598a6d84eaafb2965acf9760bbe738/dataset-thumbnail.jpg","owner":{"id":128750,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/128750-fb.jpg","isOrganization":false,"name":"Selfish Gene","profileUrl":"/selfishgene","slug":"selfishgene","maxFileSizeBytes":null}},{"entityType":"dataset","entityId":121,"title":"Pokemon with stats","entityUrl":"/abcsds/pokemon","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/121/259/f06e9f68c14ab249371e3a333e73debc/dataset-thumbnail.jpg","owner":{"id":693375,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/693375-gr.jpg","isOrganization":false,"name":"Alberto Barradas","profileUrl":"/abcsds","slug":"abcsds","maxFileSizeBytes":null}},{"entityType":"dataset","entityId":3405,"title":"The Movies Dataset","entityUrl":"/rounakbanik/the-movies-dataset","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/3405/5520/155700dd4800b6486f19dcab0e0b0cb8/dataset-thumbnail.jpg","owner":{"id":927562,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/927562-kg.jpg","isOrganization":false,"name":"Rounak Banik","profileUrl":"/rounakbanik","slug":"rounakbanik","maxFileSizeBytes":null}},{"entityType":"dataset","entityId":2547,"title":"FIFA 18 Complete Player Dataset","entityUrl":"/thec03u5/fifa-18-demo-player-dataset","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/2547/4242/1d4b291c2a7bf4ac54dd5d6365509903/dataset-thumbnail.jpg","owner":{"id":672472,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/672472-fb.jpg","isOrganization":false,"name":"Aman Shrivastava","profileUrl":"/thec03u5","slug":"thec03u5","maxFileSizeBytes":null}},{"entityType":"dataset","entityId":571,"title":"Anime Recommendations Database","entityUrl":"/CooperUnion/anime-recommendations-database","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/571/1094/c633ae058ddaa59f43649caac1748cf4/dataset-thumbnail.png","owner":{"id":137,"imageUrl":"https://kaggle2.blob.core.windows.net/organizations/137/thumbnail.jpg%3Fr=714","isOrganization":true,"name":"CooperUnion","profileUrl":"/CooperUnion","slug":"CooperUnion","maxFileSizeBytes":null}}],"discussion":{"canDownvote":false,"dataUrl":"/forums/1600/topics.json","id":1600,"isRootLevel":false,"isSubscribed":false,"initialTopics":null,"paramValues":{"category":"all","kind":"all","page":1,"search":null,"group":"all","sortBy":"hot"}},"currentTab":"home","topicId":null,"isNewTopic":false,"newTopic":{"allowAttachments":false,"authorRanking":null,"authorTier":"novice","authorType":"topic","forumId":1600,"parentName":"The Simpsons by the Data","parentUrl":"/wcukierski/the-simpsons-by-the-data"},"canSeeCategories":true,"categories":{"categories":[{"id":2112,"name":"popular culture","fullPath":"culture and arts \u003e culture and humanities \u003e popular culture","listingUrl":"/datasets?tagids=2112","topicUrl":null,"fontAwesomeIcon":null,"description":"Popular Culture datasets and kernels are associated with stuff like tv shows, movies, music, and video games. The greatest movie directors come here to train their AI to write movie scripts.","isInherited":false,"datasetCount":33,"competitionCount":0,"scriptCount":2,"totalCount":35},{"id":null,"name":"medium","fullPath":null,"listingUrl":null,"topicUrl":null,"fontAwesomeIcon":null,"description":"Dataset size: medium (10MB to 1GB)","isInherited":true,"datasetCount":0,"competitionCount":0,"scriptCount":0,"totalCount":0},{"id":null,"name":"featured","fullPath":null,"listingUrl":null,"topicUrl":null,"fontAwesomeIcon":null,"description":"This dataset has been featured by the Kaggle team","isInherited":true,"datasetCount":0,"competitionCount":0,"scriptCount":0,"totalCount":0}],"type":"dataset"},"upvoteSuggestion":{"voteCount":85,"upVoteUrl":"/wcukierski/the-simpsons-by-the-data/vote","upvoters":[{"id":1393726,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1393726-gp.jpg","userName":"filipabarroso","displayName":"Filipa Barroso","profileUrl":"/filipabarroso"},{"id":1522435,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1522435-fb.jpg","userName":"pkaura","displayName":"Puneet Kaura","profileUrl":"/pkaura"},{"id":1354549,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1354549-fb.jpg","userName":"akeemedes","displayName":"Akeemedes","profileUrl":"/akeemedes"},{"id":1501793,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1501793-gp.jpg","userName":"bwasty","displayName":"Benjamin Wasty","profileUrl":"/bwasty"},{"id":299417,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","userName":"ruphilip","displayName":"ruphilip","profileUrl":"/ruphilip"},{"id":1405755,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1405755-kg.png","userName":"dohchufan","displayName":"wuchufan","profileUrl":"/dohchufan"},{"id":1457815,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1457815-fb.jpg","userName":"mhdeutsch","displayName":"mhdeutsch","profileUrl":"/mhdeutsch"},{"id":807406,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/807406-gp.jpg","userName":"aparecido","displayName":"cesarduarte","profileUrl":"/aparecido"},{"id":1377488,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1377488-kg.jpg","userName":"aaluumian","displayName":"AaluuMian","profileUrl":"/aaluumian"},{"id":1356020,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1356020-gr.jpg","userName":"mobdylan","displayName":"mobdylan","profileUrl":"/mobdylan"},{"id":1119157,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","userName":"chandraroy","displayName":"Chandra Bhushan Roy","profileUrl":"/chandraroy"},{"id":1464862,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1464862-gr.jpg","userName":"jermspeaks","displayName":"Jeremy","profileUrl":"/jermspeaks"},{"id":1437314,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","userName":"tomhe57","displayName":"tomhe57","profileUrl":"/tomhe57"},{"id":1041245,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1041245-fb.jpg","userName":"gpiffaretti","displayName":"GabrielPiffaretti","profileUrl":"/gpiffaretti"},{"id":886142,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","userName":"smid80","displayName":"Shane Smith","profileUrl":"/smid80"}]},"canSeeNewDatasetsList":true,"canSeeDeletionButton":false,"type":"fileset","licenseGroups":[{"id":1,"name":"Creative Commons","licenses":[{"id":1,"name":"CC0: Public Domain","description":"CC0: Public Domain \u003ca href=\u0022https://creativecommons.org/publicdomain/zero/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/publicdomain/zero/1.0/","displaySequence":1},{"id":3,"name":"CC BY-NC-SA 4.0","description":"CC BY-NC-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/4.0/","displaySequence":2},{"id":8,"name":"CC BY-SA 4.0","description":"CC BY-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/4.0/","displaySequence":3},{"id":10,"name":"CC BY-SA 3.0","description":"CC BY-SA 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/3.0/","displaySequence":4}],"displaySequence":1},{"id":2,"name":"GPL","licenses":[{"id":9,"name":"GPL 2","description":"GPL 2 \u003ca href=\u0022http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html","displaySequence":1}],"displaySequence":2},{"id":3,"name":"Open Database","licenses":[{"id":5,"name":"Database: Open Database, Contents: Database Contents","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: Database Contents \u003ca href=\u0022http://opendatacommons.org/licenses/dbcl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://opendatacommons.org/licenses/dbcl/1.0/","displaySequence":1},{"id":6,"name":"Database: Open Database, Contents: © Original Authors","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: © Original Authors","url":"http://opendatacommons.org/licenses/odbl/1.0/","displaySequence":2}],"displaySequence":3},{"id":4,"name":"Special Cases","licenses":[{"id":7,"name":"World Bank Dataset Terms of Use","description":"World Bank Dataset Terms of Use \u003ca href=\u0022http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html","displaySequence":1},{"id":2,"name":"Reddit API Terms","description":"Reddit API Terms \u003ca href=\u0022https://www.reddit.com/wiki/api\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.reddit.com/wiki/api","displaySequence":2}],"displaySequence":4},{"id":5,"name":"Other","licenses":[{"id":11,"name":"Data files © Original Authors","description":"Data files © Original Authors","url":null,"displaySequence":1},{"id":12,"name":"Other (specified in description)","description":"Other (specified in description)","url":null,"displaySequence":2},{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":3}],"displaySequence":5}],"owners":[{"id":0,"imageUrl":"/image-fetch/0","isOrganization":false,"name":null,"profileUrl":"/","slug":null,"maxFileSizeBytes":null},{"id":3258,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/3258-fb.jpg","isOrganization":false,"name":"William Cukierski","profileUrl":"/wcukierski","slug":"wcukierski","maxFileSizeBytes":10737418240}],"maxCompressedFileBytesAllowed":10737418240,"maxUncompressedFileBytesAllowed":10737418240,"maxTopLevelFilesAllowed":50,"canSeeDatasetWorker":true,"referrer":null,"title":"The Simpsons by the Data","slug":"the-simpsons-by-the-data","licenseId":11,"data":{"id":430,"datasetId":203,"datasetVersionType":"fileset","versionNumber":1,"zipBlobFileId":28520,"totalSize":35697943,"name":"The Simpsons by the Data","description":"This dataset contains the characters, locations, episode details, and script lines for approximately 600 Simpsons episodes, dating back to 1989.\n\nInspiration and credit for gathering the data goes to Todd Schneider:\n\nhttp://toddwschneider.com/posts/the-simpsons-by-the-data/  \nhttps://github.com/toddwschneider/flim-springfield","type":"datasetVersion","children":[{"id":1400,"blobFileId":28516,"url":"/wcukierski/the-simpsons-by-the-data/downloads/simpsons_characters.csv","relativePath":"../input/simpsons_characters.csv","creationDate":"2016-09-28T19:19:49Z","ownerSlug":"wcukierski","datasetSlug":"the-simpsons-by-the-data","datasetVersionNumber":1,"isDummy":false,"size":214869,"fullPath":null,"previewUrl":null,"downloadUrl":"/wcukierski/the-simpsons-by-the-data/downloads/simpsons_characters.csv","fileType":".csv","validationErrors":null,"name":"simpsons_characters.csv","description":"Contains character names and a character id","type":"datasetVersionFile","children":[{"columns":[{"name":"id","description":null,"order":0,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"name","description":null,"order":1,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"normalized_name","description":null,"order":2,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"gender","description":null,"order":3,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null}],"totalRows":null,"name":null,"description":null,"type":"genericTable","children":[],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}}],"collapsed":false,"info":{"metrics":null},"settings":null},{"id":1401,"blobFileId":28517,"url":"/wcukierski/the-simpsons-by-the-data/downloads/simpsons_episodes.csv","relativePath":"../input/simpsons_episodes.csv","creationDate":"2016-09-28T19:19:48Z","ownerSlug":"wcukierski","datasetSlug":"the-simpsons-by-the-data","datasetVersionNumber":1,"isDummy":false,"size":119729,"fullPath":null,"previewUrl":null,"downloadUrl":"/wcukierski/the-simpsons-by-the-data/downloads/simpsons_episodes.csv","fileType":".csv","validationErrors":null,"name":"simpsons_episodes.csv","description":"Contains metadata related to each episode","type":"datasetVersionFile","children":[{"columns":[{"name":"id","description":null,"order":0,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"title","description":null,"order":1,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"original_air_date","description":null,"order":2,"originalType":"","type":"dateTime","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"production_code","description":null,"order":3,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"season","description":null,"order":4,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"number_in_season","description":null,"order":5,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"number_in_series","description":null,"order":6,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"us_viewers_in_millions","description":null,"order":7,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"views","description":null,"order":8,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"imdb_rating","description":null,"order":9,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"imdb_votes","description":null,"order":10,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"image_url","description":null,"order":11,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"video_url","description":null,"order":12,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null}],"totalRows":null,"name":null,"description":null,"type":"genericTable","children":[],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}}],"collapsed":false,"info":{"metrics":null},"settings":null},{"id":1402,"blobFileId":28518,"url":"/wcukierski/the-simpsons-by-the-data/downloads/simpsons_locations.csv","relativePath":"../input/simpsons_locations.csv","creationDate":"2016-09-28T19:19:48Z","ownerSlug":"wcukierski","datasetSlug":"the-simpsons-by-the-data","datasetVersionNumber":1,"isDummy":false,"size":178199,"fullPath":null,"previewUrl":null,"downloadUrl":"/wcukierski/the-simpsons-by-the-data/downloads/simpsons_locations.csv","fileType":".csv","validationErrors":null,"name":"simpsons_locations.csv","description":"Contains locations and a location id","type":"datasetVersionFile","children":[{"columns":[{"name":"id","description":null,"order":0,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"name","description":null,"order":1,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"normalized_name","description":null,"order":2,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null}],"totalRows":null,"name":null,"description":null,"type":"genericTable","children":[],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}}],"collapsed":false,"info":{"metrics":null},"settings":null},{"id":1403,"blobFileId":28519,"url":"/wcukierski/the-simpsons-by-the-data/downloads/simpsons_script_lines.csv","relativePath":"../input/simpsons_script_lines.csv","creationDate":"2016-09-28T19:19:54Z","ownerSlug":"wcukierski","datasetSlug":"the-simpsons-by-the-data","datasetVersionNumber":1,"isDummy":false,"size":9163442,"fullPath":null,"previewUrl":null,"downloadUrl":"/wcukierski/the-simpsons-by-the-data/downloads/simpsons_script_lines.csv","fileType":".csv","validationErrors":null,"name":"simpsons_script_lines.csv","description":"Contains the text spoken during each episode (including details about which character said it and where)","type":"datasetVersionFile","children":[{"columns":[{"name":"id","description":null,"order":0,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"episode_id","description":null,"order":1,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"number","description":"line number in each episode","order":2,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"raw_text","description":null,"order":3,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"timestamp_in_ms","description":null,"order":4,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"speaking_line","description":null,"order":5,"originalType":"","type":"boolean","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"character_id","description":null,"order":6,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"location_id","description":null,"order":7,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"raw_character_text","description":null,"order":8,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"raw_location_text","description":null,"order":9,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"spoken_words","description":null,"order":10,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"normalized_text","description":null,"order":11,"originalType":"","type":"string","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"word_count","description":null,"order":12,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null}],"totalRows":null,"name":null,"description":null,"type":"genericTable","children":[],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}}],"collapsed":false,"info":{"metrics":null},"settings":null}],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}},"isPublished":true,"owner":{"id":3258,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/3258-fb.jpg","isOrganization":false,"name":"William Cukierski","profileUrl":"/wcukierski","slug":"wcukierski","maxFileSizeBytes":10737418240}});performance && performance.mark && performance.mark("DatasetContainer.componentCouldBootstrap");</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX", "TeX"],
+            linebreaks: {
+                automatic: true
+            },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno"
+        },
+        TeX: {
+            noUndefined: {
+                attributes: {
+                    mathcolor: "red",
+                    mathbackground: "#FFEEEE",
+                    mathsize: "90%"
+                }
+            }
+        },
+        Macros: {
+            href: "{}"
+        },
+        skipStartupTypeset: true,
+        messageStyle: "none"
+    });
+</script>
+
+<script type="text/javascript" async crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    </div>
+
+        <div class="site-layout__footer">
+            <footer class="site-footer">
+    <div class="site-footer__content">
+        <div class="site-footer__copyright">
+            <span>&copy; 2018 Kaggle Inc</span>
+        </div>
+        <nav class="site-footer__nav">
+            <a href="/team">Our Team</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/contact">Contact/Support</a>
+        </nav>
+        <nav class="site-footer__social">
+            <div data-component-name="SocialIcons"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push();performance && performance.mark && performance.mark("SocialIcons.componentCouldBootstrap");</script>
+        </nav>
+    </div>
+</footer>
+
+        </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var Kaggle = Kaggle || {};
+
+    Kaggle.Current = {
+        hasJupyterNotebookEditor: true,
+        hasEnvironmentVariables: false,
+        hasInteractiveScripts: false,
+        hasStandaloneKernelProxy: true,
+        hasKernelsAsDataSources: true,
+        antiForgeryToken: '3u6AjZrzbsR_v---Od4-7CyuZVpaZIjfaT0KQ8aRy1rupJEYQvwMICgcLTwfJ5fCqOWOvy93mjruB9ZLcs-LsfSYa741',
+        isAnonymous: true,
+        isFullScreen: false,
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+    var decodeUserDisplayName = function () {
+        var escapedUserDisplayName = Kaggle.Current.userDisplayNameEscaped || "";
+        try {
+          var textVersion = new DOMParser().parseFromString(escapedUserDisplayName, "text/html").documentElement.textContent;
+          if (textVersion) {
+              return textVersion;
+          }
+        } catch(ex) {}
+        
+        return escapedUserDisplayName;
+    }
+    Kaggle.Current.userDisplayName = decodeUserDisplayName();
+</script>
+
+
+
+
+
+<script type="text/javascript">
+    var Kaggle = Kaggle || {};
+    Kaggle.PageMessages = [{"id":null,"type":"info","message":null,"dangerousHtmlMessage":"Please \u003ca href=\u0022/account/login?returnUrl=%2Fwcukierski%2Fthe-simpsons-by-the-data\u0022\u003elogin\u003c/a\u003e to download this dataset.","isPersistent":true,"faIcon":null}];
+</script>
+
+
+<script src="/content/v/5dbea6ee9ce1/shared/js/kaggle.prism.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+goog_snippet_vars = function() {
+    var w = window;
+    w.google_conversion_id = 955616553;
+    w.google_conversion_label = "-SL0CM3tqXMQqZrWxwM";
+    w.google_conversion_value = 0.00;
+    w.google_conversion_currency = "USD";
+    w.google_remarketing_only = false;
+    w.google_conversion_language = "en";
+    w.google_conversion_format = "3";
+    w.google_conversion_color = "ffffff";
+}
+// DO NOT CHANGE THE CODE BELOW.
+goog_report_conversion = function(url) {
+    goog_snippet_vars();
+    window.google_conversion_format = "3";
+    var opt = new Object();
+    opt.onload_callback = function() {
+        if (typeof(url) != 'undefined') {
+            window.location = url;
+        }
+    }
+    var conv_handler = window['google_trackConversion'];
+    if (typeof(conv_handler) == 'function') {
+        conv_handler(opt);
+    }
+}
+/* ]]> */
+</script>
+<script type="text/javascript"
+src="//www.googleadservices.com/pagead/conversion_async.js">
+</script>
+
+
+
+
+
+    <script src="/static/assets/app.js?v=22f5b6bba5ff"></script>
+    
+        <script>
+            (function() {
+                if ('serviceWorker' in navigator) {
+                    
+                    navigator.serviceWorker.register("/static/assets/service-worker.js").then(function(reg) {
+                        
+                        reg.onupdatefound = function() {
+                            
+                            var installingWorker = reg.installing;
+                            installingWorker.onstatechange = function() {
+                                switch (installingWorker.state) {
+                                case 'installed':
+                                    if (navigator.serviceWorker.controller) {
+                                        
+                                        console.log('New or updated content is available.');
+                                    } else {
+                                        
+                                        console.log('Content is now available offline!');
+                                    }
+                                    break;
+                                case 'redundant':
+                                    console.error('The installing service worker became redundant.');
+                                    break;
+                                }
+                            };
+                        };
+                    }).catch(function(e) {
+                      console.error('Error during service worker registration:', e);
+                    });
+                }
+            })();
+        </script>
+</body>
+</html>
